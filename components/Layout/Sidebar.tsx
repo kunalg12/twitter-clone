@@ -1,5 +1,6 @@
 import { BsHouseFill, BsBellFill } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
+import SidebarItem from "./SidebarItem";
 import SiderbarLogo from "./SidebarLogo";
 
 const Sidebar = () => {
@@ -25,6 +26,13 @@ const Sidebar = () => {
       <div className="flex flex-col items-end">
         <div className="space-y-2 lg:w-[230px]">
           <SiderbarLogo />
+          {items.map((item) => (
+            <SidebarItem
+            key={item.href}
+            href={item.href}
+            label={item.href}
+            icon={item.href}/>
+          ))}
         </div>
       </div>
     </div>
