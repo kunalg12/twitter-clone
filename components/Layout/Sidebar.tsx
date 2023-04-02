@@ -8,17 +8,17 @@ const Sidebar = () => {
     {
       label: "Home",
       href: "/",
-      icons: BsHouseFill,
+      icon: BsHouseFill,
     },
     {
       label: "Notifications",
       href: "/notifications",
-      icons: BsBellFill,
+      icon: BsBellFill,
     },
     {
       label: "Profile",
       href: "/users/123",
-      icons: FaUser,
+      icon: FaUser,
     },
   ];
   return (
@@ -28,10 +28,11 @@ const Sidebar = () => {
           <SiderbarLogo />
           {items.map((item) => (
             <SidebarItem
-            key={item.href}
-            href={item.href}
-            label={item.href}
-            icon={item.href}/>
+              key={item.href}
+              href={item.href}
+              label={item.href}
+              icon={item.icon}
+            />
           ))}
         </div>
       </div>
