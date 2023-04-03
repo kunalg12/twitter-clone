@@ -1,23 +1,24 @@
 import { BsHouseFill, BsBellFill } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
+import { BiLogOut } from "react-icons/bi";
 import SidebarItem from "./SidebarItem";
 import SiderbarLogo from "./SidebarLogo";
 
 const Sidebar = () => {
   const items = [
     {
-      label: "Home",
-      href: "/",
+      label: 'Home',
+      href: '/',
       icon: BsHouseFill,
     },
     {
-      label: "Notifications",
-      href: "/notifications",
+      label: 'Notifications',
+      href: '/notifications',
       icon: BsBellFill,
     },
     {
-      label: "Profile",
-      href: "/users/123",
+      label: 'Profile',
+      href: '/users/123',
       icon: FaUser,
     },
   ];
@@ -30,10 +31,12 @@ const Sidebar = () => {
             <SidebarItem
               key={item.href}
               href={item.href}
-              label={item.href}
+              label={item.label}
               icon={item.icon}
             />
           ))}
+          <SidebarItem onclick={() => {}} icon={BiLogOut} label="Logout"/>
+          <SiderbarTweetButton/>
         </div>
       </div>
     </div>
