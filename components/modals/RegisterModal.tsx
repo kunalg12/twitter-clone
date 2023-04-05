@@ -7,7 +7,10 @@ import useRegisterModal from "../../hooks/useRegisterModal";
 const RegisterModal = () => {
   const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
+
   const [email, setEmail] = useState("");
+  const [name , setName] = useState("");
+  const [username , setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -15,21 +18,31 @@ const RegisterModal = () => {
     try {
       setIsLoading(true);
 
-      // TO DO LOGIN
+      // TODO Add register logic here
 
-      loginModal.onClose();
+      registerModal.onClose();
     } catch (err) {
       console.log(err);
     } finally {
       setIsLoading(false);
     }
-  }, [loginModal]);
+  }, [registerModal]);
 
   const bodyContent = (
     <div className="flex flex-col gap-4 ">
       <Input placeholder="Email" 
       onChange={(e) => setEmail(e.target.value)}
       value="email"
+      disabled={isLoading}
+      />
+      <Input placeholder="Name" 
+      onChange={(e) => setName(e.target.value)}
+      value="name"
+      disabled={isLoading}
+      />
+      <Input placeholder="Username" 
+      onChange={(e) => setUsername(e.target.value)}
+      value="username"
       disabled={isLoading}
       />
       <Input placeholder="Password" 
@@ -43,10 +56,10 @@ const RegisterModal = () => {
   return <>
     <Modal
     disabled={isLoading}
-    isOpen={loginModal.isOpen}
-    title="Login"
-    actionLabel="Sign In"
-    onClose={loginModal.onClose}
+    isOpen={registerModal.isOpen}
+    title="Create an account"
+    actionLabel="Register"
+    onClose={registerModal.onClose}
     onSubmit={onSumbit}
     body={bodyContent}
     />
