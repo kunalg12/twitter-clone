@@ -2,9 +2,11 @@ import { useCallback, useState } from "react";
 import useLoginModal from "../../hooks/useLoginModal";
 import Input from "../Input";
 import Modal from "../Modal";
+import useRegisterModal from "../../hooks/useRegisterModal";
 
-const LoginModal = () => {
+const RegisterModal = () => {
   const loginModal = useLoginModal();
+  const registerModal = useRegisterModal();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -51,4 +53,4 @@ const LoginModal = () => {
   </>;
 };
 
-export default LoginModal;
+export default RegisterModal;
