@@ -1,13 +1,17 @@
 import { useRouter } from "next/router";
+import { useCallback } from "react";
 import { FaFeather } from "react-icons/fa";
+import useLoginModal from "../../hooks/useLoginModal";
 
 const SiderbarTweetButton = () => {
   const router = useRouter();
+  const loginModal = useLoginModal();
+  const onclick = useCallback(() => {
+    loginModal.onOpen();
+  }, [ loginModal ])
   return (
     <div
-      onClick={() => {
-        router.push("/");
-      }}
+      onClick={onclick}
     >
       <div
         className="mt-6

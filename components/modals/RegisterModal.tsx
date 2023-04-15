@@ -15,7 +15,7 @@ const RegisterModal = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const onToggle = useCallback(() => {
-    if(isLoading){
+    if (isLoading) {
       return;
     }
     registerModal.onClose();
@@ -67,8 +67,13 @@ const RegisterModal = () => {
 
   const footerContent = (
     <div className="text-neutral-400 text-center mt-4">
-      <p>Already have acount?
-      <span className="text-white cursor-pointer hover:underline">Sign In</span>
+      <p>
+        Already have acount?
+        <span
+          onClick={onToggle}
+         className="text-white cursor-pointer hover:underline">
+          Sign In
+        </span>
       </p>
     </div>
   );
