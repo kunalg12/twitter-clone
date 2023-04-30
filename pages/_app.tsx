@@ -9,7 +9,7 @@ import RegisterModal from '../components/modals/RegisterModal'
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-    <SessionProvider>
+    <SessionProvider session={pageProps.session}>
     <RegisterModal/>
     <LoginModal/>
      <Layout> 
